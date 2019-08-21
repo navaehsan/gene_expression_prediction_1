@@ -1,2 +1,2 @@
-# gene_expression_prediction_1
+# prediction of gene expression
 predicting gene expression using allelic fold change
