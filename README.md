@@ -2,8 +2,8 @@
 predicting gene expression using allelic fold change
 
 
-# AFC_Whole_Blood.txt
-In this file for each variant in columnn "variant_id" we have the following information:
+# aFC_Whole_Blood.txt
+This is a tab delimited file. In this file for each variant in columnn "variant_id" we have the following information:
 
 gene_id : gene associated to that variant
 
