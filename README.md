@@ -3,8 +3,8 @@ This script is designed to predict allele-specific expressian and total gene exp
 
 ## Inputs
 
-### aFC_Whole_Blood.txt
-This is a tab delimited file providing allelic fold change for each eQTL. In this file for each variant in columnn "variant_id" we have the following information:
+### AFC file
+In the data folder there is a file named aFC_Whole_Blood.txt. This is a tab delimited file providing allelic fold change for each eQTL. In this file for each variant in columnn "variant_id" we have the following information:
 
 gene_id : gene associated to that variant
 
@@ -22,7 +22,7 @@ log2_aFC : The effect size of the variant
 
 ### vcf file
 
-For using this script a phased vcf file is required to extract the genotypes of individuals.
+For using this script a phased vcf file is required to extract the genotypes of individuals. In the data folder there is a vcf_smaple.txt file. 
 
 genotype, encoded as allele values separated by either of / or |. " /" means genotype unphased and "|" means genotype phased. The allele values are 0 for the reference allele (what is in the REF  field), 1 for the  
 allele listed in ALT. For diploid calls examples could be 0/1, 1|0. 
