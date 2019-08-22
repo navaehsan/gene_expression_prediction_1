@@ -71,5 +71,5 @@ genotype_h2 = c(1,0,0)
 
 Let's call AFC_vector as the output of the AFC_gene_vector function then the result could be obtained by calling the function as follows:
 
-result<-gene_expression_estimation(genotype_h1,genotype_h2,AFC_vector)
+result<-gene_expression_estimation(genotype_h1, genotype_h2, AFC_vector)
 
