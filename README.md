@@ -3,7 +3,7 @@ predicting gene expression using allelic fold change
 
 
 # aFC_Whole_Blood.txt
-This is a tab delimited file providing allelic fold change for each variant. In this file for each variant in columnn "variant_id" we have the following information:
+This is a tab delimited file providing allelic fold change for each eQTL. In this file for each variant in columnn "variant_id" we have the following information:
 
 gene_id : gene associated to that variant
 
