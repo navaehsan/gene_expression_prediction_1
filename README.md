@@ -46,8 +46,7 @@ result[3] : total expression in log2 scale
 
 for using this function a phased vcf file is required to extract the genotypes of individuals.
 
-In VCF file if genotype information is present, then the same types of data must be present for all samples. First a FORMAT  
-field is given specifying the data types and order (colon-separated alphanumeric String). This is followed by one field per sample, with the colon-separated data in this  field corresponding to the types specified in the format. The  first sub-field must always be the genotype (GT)
+In VCF file if genotype information is present, then the same types of data must be present for all samples. First a FORMAT   field is given specifying the data types and order (colon-separated alphanumeric String). This is followed by one field per sample, with the colon-separated data in this  field corresponding to the types specified in the format. The  first sub-field must always be the genotype (GT)
 
 GT : genotype, encoded as allele values separated by either of / or |. " /" means genotype unphased and "|" means genotype phased. The allele values are 0 for the reference allele (what is in the REF  field), 1 for the  
 allele listed in ALT. For diploid calls examples could be 0/1, 1|0. 
