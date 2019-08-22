@@ -1,5 +1,5 @@
 # Prediction of gene expression
-This script is designed to predict allele-specific expressian and total gene expression using allelic fold change (AFC). See the [manuscript] (https://genome.cshlp.org/content/27/11/1872.short) for method description.
+This script is designed to predict allele-specific expressian and total gene expression using allelic fold change (AFC). See the [manuscript](https://genome.cshlp.org/content/27/11/1872.short) for method description.
 
 
 # aFC_Whole_Blood.txt
