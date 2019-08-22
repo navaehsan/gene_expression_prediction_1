@@ -1,5 +1,5 @@
-# prediction of gene expression
-predicting gene expression using allelic fold change
+# Prediction of gene expression
+This script could be used to predict gene expression using allelic fold change (AFC). The method is based on Mohammadi, P., Castel, S. E., Brown, A. A., & Lappalainen, T. (2017). Quantifying the regulatory effect size of cis-acting genetic variation using allelic fold change. Genome research, 27(11), 1872-1884 
 
 
 # aFC_Whole_Blood.txt
@@ -52,7 +52,7 @@ field is given specifying the data types and order (colon-separated alphanumeric
 GT : genotype, encoded as allele values separated by either of / or |. " /" means genotype unphased and "|" means genotype phased. The allele values are 0 for the reference allele (what is in the REF  field), 1 for the  
 allele listed in ALT. For diploid calls examples could be 0/1, 1|0. 
 
-### The REF and ALT information should match the REF and ALT information in aFC_Whole_Blood.txt
+**The REF and ALT information should match the REF and ALT information in aFC_Whole_Blood.txt**
 
 For example if a gene has three eQTLs naming chr6_143498271_ATTGAACAAAGTCC_A_b38, chr6_143501317_C_G_b38, chr6_143504621_C_T_b38 and vcf file has the following information for an individual:
 ID    individual_1
