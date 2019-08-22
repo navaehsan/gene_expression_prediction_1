@@ -55,13 +55,13 @@ allele listed in ALT. For diploid calls examples could be 0/1, 1|0.
 
 For example if a gene has three eQTLs naming chr6_143498271_ATTGAACAAAGTCC_A_b38, chr6_143501317_C_G_b38, chr6_143504621_C_T_b38 and vcf file has the following information for an individual:
 
-ID    individual_1
+ID  individual_1
 
-chr6_143498271_ATTGAACAAAGTCC_A_b38     0|1
+chr6_143498271_ATTGAACAAAGTCC_A_b38 0|1
 
-chr6_143501317_C_G_b38         0|0
+chr6_143501317_C_G_b38  0|0
 
-chr6_143504621_C_T_b38       1|0
+chr6_143504621_C_T_b38  1|0
 
 a sample genotype for that gene would be : 
 
