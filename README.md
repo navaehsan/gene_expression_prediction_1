@@ -1,5 +1,5 @@
 # Prediction of gene expression
-This script could be used to predict gene expression using allelic fold change (AFC). The method is based on Mohammadi, P., Castel, S. E., Brown, A. A., & Lappalainen, T. (2017). Quantifying the regulatory effect size of cis-acting genetic variation using allelic fold change. Genome research, 27(11), 1872-1884 
+This script is designed to predict allele-specific expressian and total gene expression using allelic fold change (AFC). See the [manuscript] (https://genome.cshlp.org/content/27/11/1872.short) for method description.
 
 
 # aFC_Whole_Blood.txt
