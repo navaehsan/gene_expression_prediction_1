@@ -20,7 +20,7 @@ ALT : The Alternative allele
 
 log2_aFC : The effect size of the variant
 
-### vcf file
+### VCF file
 
 For using this script a phased vcf file is required to extract the genotypes of individuals. In the data folder there is a vcf_smaple.txt file. 
 
