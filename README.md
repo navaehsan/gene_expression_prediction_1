@@ -21,7 +21,7 @@ log2_aFC : The effect size of the variant
 
 # gene_expression_estimation_function.ipynb
 
-This notebooks provide two functions that will read the AFC file and predict the gene expression.
+This notebooks provide two functions in R that will read the AFC file and predict the gene expression.
 
 ## AFC_gene_vector function:
 
