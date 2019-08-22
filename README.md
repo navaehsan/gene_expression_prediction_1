@@ -31,7 +31,7 @@ allele listed in ALT. For diploid calls examples could be 0/1, 1|0.
 
 Here is an example to predict the expression of a specific gene for an individual using these inputs
 
-```
+```R
 # AFC file
 AFC_file = "data/aFC_Whole_Blood.txt"
 
