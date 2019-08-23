@@ -2,6 +2,9 @@
 # The AFC file should be sorted on gene_id
 AFC=read.table(file="data\aFC_Whole_Blood.txt", header=TRUE, sep="\t")
 
+# maximum number of variants
+maximum_variants <- 16
+
 
 # h1: first haplotype
 # h2: second haplotype
@@ -27,11 +30,8 @@ number2binary = function(number, noBits) {
   }
 }
 
+########################
 
-
-
-# maximum number of variants
-maximum_variants <- 16
 
 for (var_count in 1:maximum_variants){    
   lookup_table<-data.frame()
@@ -105,8 +105,8 @@ for (var_count in 1:maximum_variants){
   }
   # create output  
   
-  write.csv(lookup_table, file=paste0("result",var_count,".csv"))
-  write.table(lookup_table,file=paste0("result",var_count,".txt"))
+  write.csv(lookup_table, file=paste0("lookupTable_variantNo_",var_count,".csv"))
+  write.table(lookup_table,file=paste0("lookupTable_variantNo_",var_count,".txt"))
   
   
 }
