@@ -70,11 +70,11 @@ genotype_info= read.table(vcf_file, header=TRUE, sep = "\t")
 
 
 # get the afc vector for a specific gene 
-# the function definition is available in R folder
+# the function definition is available in R folder in gene_expression_estimation_functions.ipynb
 AFC_vector<-AFC_gene_vector(gene_id)
 
 # get the afc vector for a specific gene 
-# the function definition is available in R folder
+# the function definition is available in R folder in gene_expression_estimation_functions.ipynb
 variant_vector<-variant_gene_vector(gene_id)
 
 
@@ -95,7 +95,7 @@ for (variant in variant_vector){
 
 
 #get the expression output vector for two haplotypes
-# the function definition is available in R folder
+# the function definition is available in R folder in gene_expression_estimation_functions.ipynb
 #result[1] : log expression for haplotype 1 in log2 scale
 #result[2] : gene expression for haplotype 2 in log2 scale
 #result[3] : total expression in log2 scale
