@@ -29,6 +29,23 @@ allele listed in ALT. For diploid calls examples could be 0/1, 1|0.
 
 **The REF and ALT information should match the REF and ALT information in aFC_Whole_Blood.txt**
 
+In order to extract the subset of the vcf file you can use the following command
+
+```Shell
+for line in $(cat ~/data/IDs.txt)
+    do
+    id=`echo ${line} | sed 's/\"/\t/g'`
+    chr=`echo ${id} | sed 's/_/\t/g' | cut -f 1`
+    pos=`echo ${id} | sed 's/_/\t/g' | cut -f 2`
+    echo ${id}
+    echo ${chr}
+    echo ${pos}
+    tabix vcf_file ${chr}:${pos}-${pos} | grep -w $id >> vcf_file_subset.txt
+    done
+
+
+```
+
 Here is an example to predict the expression of a specific gene for an individual using these inputs
 
 ```R
