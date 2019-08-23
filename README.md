@@ -109,7 +109,7 @@ print(result)
 
 ## gene_expression_estimation_functions.ipynb
 
-This notebooks provide functions in R used in the above example that will read the AFC file and predict the gene expression.
+This notebook provides functions in R used in the above example that will read the AFC file and predict the gene expression.
 
 
 ## gene_expression_lookupTable.R
