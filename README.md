@@ -52,7 +52,7 @@ Here is an example to predict the expression of a specific gene for an individua
 # AFC file
 AFC_file = "data/aFC_Whole_Blood.txt"
 
-#vcf file
+#VCF file
 vcf_file = "data/sample_vcf.txt"
 
 
@@ -65,7 +65,7 @@ individual_id = "individual_id"
 # read AFC file
 AFC_dt=read.table(AFC_file, header=TRUE, sep="\t")
 
-#read vcf file 
+#read VCF file 
 genotype_info= read.table(vcf_file, header=TRUE, sep = "\t")
 
 
@@ -114,7 +114,7 @@ This notebook provides functions in R used in the above example that will read t
 
 ## gene_expression_lookupTable.R
 
-This R script gets a sorted AFC file (**sort based on gene_id**), counts the number of variants for each gene and produces expression values for all genotypes. To run the script use the following command:
+This R script gets a sorted AFC file (**sorted based on gene_id**), counts the number of variants for each gene and produces expression values for all genotypes. To run the script use the following command:
 
 ```Shell
     Rscript gene_expression_lookupTable.R
