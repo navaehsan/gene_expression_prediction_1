@@ -105,30 +105,14 @@ print(result)
 }
 ```
 
-# gene_expression_estimation_function.ipynb
+# R resources
 
-This notebooks provide two functions in R that will read the AFC file and predict the gene expression.
+## gene_expression_estimation_function.ipynb
 
-## AFC_gene_vector function:
+This notebooks provide functions in R used in the above example that will read the AFC file and predict the gene expression.
 
-Reading the AFC file "aFC_Whole_Blood.txt" and saving it in a dataframe named AFC_dt, This function will retrieve the AFC vector for a gene which will be used in the next function to predict the expression of a gene.
 
-## gene_expression_estimation function:
-This function predicts the gene expression using :
 
-h1 : genotype of variants for the first haplotype
-
-h2 : genotype of variants for the second haplotype
-
-s : vector of effect size of variants
-
-returns a vector : 
-
-result[1] : log expression for haplotype 1 in log2 scale
-
-result[2] : gene expression for haplotype 2 in log2 scale
-
-result[3] : total expression in log2 scale
 
 
 
