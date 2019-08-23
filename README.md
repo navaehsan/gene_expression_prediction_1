@@ -6,19 +6,19 @@ This script is designed to predict allele-specific expressian and total gene exp
 ### AFC file
 In the data folder there is a file named aFC_Whole_Blood.txt. This is a tab delimited file providing allelic fold change for each eQTL. In this file for each variant in columnn "variant_id" we have the following information:
 
-gene_id : gene associated to that variant
+- gene_id : gene associated to that variant
 
-rank : rank of that variant in eQTL calling process
+- rank : rank of that variant in eQTL calling process
 
-CHROM : the chromosome of the variant
+- CHROM : the chromosome of the variant
 
-POS : position of that variant
+- POS : position of that variant
 
-REF : The Reference allele
+- REF : The Reference allele
 
-ALT : The Alternative allele
+- ALT : The Alternative allele
 
-log2_aFC : The effect size of the variant
+- log2_aFC : The effect size of the variant
 
 ### VCF file
 
