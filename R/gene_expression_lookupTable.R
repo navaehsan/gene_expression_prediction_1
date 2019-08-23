@@ -1,6 +1,9 @@
 #lookup table for n variants
+
+args <- commandArgs(trailingOnly = TRUE)
+
 # The AFC file should be sorted on gene_id
-AFC=read.table(file="data\aFC_Whole_Blood.txt", header=TRUE, sep="\t")
+AFC=read.table(file=args[1], header=TRUE, sep="\t")
 
 # maximum number of variants
 maximum_variants <- 16
