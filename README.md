@@ -107,12 +107,18 @@ print(result)
 
 # R resources
 
-## gene_expression_estimation_function.ipynb
+## gene_expression_estimation_functions.ipynb
 
 This notebooks provide functions in R used in the above example that will read the AFC file and predict the gene expression.
 
 
+## gene_expression_lookupTable.R
 
+This R script gets a sorted AFC file (sort based on gene_id), counts the number of variants for each gene and produces expression values for all genotypes. To run the script use the following command:
+
+```Shell
+    Rscript gene_expression_lookupTable.R
+```    
 
 
 
