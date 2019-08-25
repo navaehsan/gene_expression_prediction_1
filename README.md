@@ -53,7 +53,7 @@ Here is an example to predict the expression of a specific gene for an individua
 AFC_file = "data/aFC_Whole_Blood.txt"
 
 #VCF file
-vcf_file = "data/sample_vcf.txt"
+VCF_file = "data/sample_vcf.txt"
 
 
 # Name of gene that we want to predict its expression
@@ -69,7 +69,7 @@ expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,indivi
     AFC_dt=read.table(AFC_file, header=TRUE, sep="\t")
 
     #read vcf file 
-    genotype_info= read.table(vcf_file, header=TRUE, sep = "\t")
+    genotype_info= read.table(VCF_file, header=TRUE, sep = "\t")
    
 
     # get the afc vector for a specific gene 
