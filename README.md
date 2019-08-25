@@ -106,7 +106,7 @@ expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,indivi
     
     return(result)
     }
-    ```
+  ```
 
 # R resources
 
