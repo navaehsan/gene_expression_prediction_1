@@ -66,7 +66,7 @@ individual_id = "individual_id"
 
 expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,individual_id){
     # read AFC file
-    AFC_dt=read.table(AFC_file, header=TRUE, sep="\t")
+    AFC_df=read.table(AFC_file, header=TRUE, sep="\t")
 
     #read vcf file 
     genotype_info= read.table(VCF_file, header=TRUE, sep = "\t")
@@ -74,12 +74,12 @@ expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,indivi
 
     # get the afc vector for a specific gene 
     # the function definition is available in R folder
-    AFC_vector<-AFC_gene_vector(gene_id,AFC_dt)
+    AFC_vector<-AFC_gene_vector(gene_id,AFC_df)
    
 
     # get the afc vector for a specific gene 
     # the function definition is available in R folder
-    variant_vector<-variant_gene_vector(gene_id,AFC_dt)
+    variant_vector<-variant_gene_vector(gene_id,AFC_df)
 
 
     #null genotypes
