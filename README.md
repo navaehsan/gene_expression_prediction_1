@@ -62,48 +62,51 @@ gene_id = "gene_id"
 # Name of individual that we want to predict its expression
 individual_id = "individual_id"
 
-# read AFC file
-AFC_dt=read.table(AFC_file, header=TRUE, sep="\t")
+#########################
 
-#read VCF file 
-genotype_info= read.table(vcf_file, header=TRUE, sep = "\t")
+expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,individual_id){
+    # read AFC file
+    AFC_dt=read.table(AFC_file, header=TRUE, sep="\t")
 
-
-# get the afc vector for a specific gene 
-# the function definition is available in R folder in gene_expression_estimation_functions.ipynb
-AFC_vector<-AFC_gene_vector(gene_id)
-
-# get the afc vector for a specific gene 
-# the function definition is available in R folder in gene_expression_estimation_functions.ipynb
-variant_vector<-variant_gene_vector(gene_id)
-
-
-#null genotypes
-genotype_h1 = c()
-genotype_h2 = c()
-
-
-for (variant in variant_vector){
-    genotype<-genotype_info[genotype_info$ID == variant,individual_id]
+    #read vcf file 
+    genotype_info= read.table(vcf_file, header=TRUE, sep = " ")
    
-    genotype_split_full <-unlist(strsplit(as.character(genotype),":"))[1]
-    genotype_split<-unlist(strsplit(as.character(genotype),"|"))
-    genotype_h1<-c(genotype_h1,genotype_split[1])
-    genotype_h2<-c(genotype_h2,genotype_split[3])
-        }
+
+    # get the afc vector for a specific gene 
+    # the function definition is available in R folder
+    AFC_vector<-AFC_gene_vector(gene_id,AFC_dt)
+   
+
+    # get the afc vector for a specific gene 
+    # the function definition is available in R folder
+    variant_vector<-variant_gene_vector(gene_id,AFC_dt)
+
+
+    #null genotypes
+    genotype_h1 = c()
+    genotype_h2 = c()
+
+# assuming variant and individual_id exist in vcf file
+    for (variant in variant_vector){
+        
+        genotype<-genotype_info[genotype_info$ID == variant,individual_id]      
+        genotype_split_full <-unlist(strsplit(as.character(genotype),":"))[1]
+        genotype_split<-unlist(strsplit(as.character(genotype),"|"))
+        genotype_h1<-c(genotype_h1,genotype_split[1])
+        genotype_h2<-c(genotype_h2,genotype_split[3])
+    }
+
     
-
-
-#get the expression output vector for two haplotypes
-# the function definition is available in R folder in gene_expression_estimation_functions.ipynb
-#result[1] : log expression for haplotype 1 in log2 scale
-#result[2] : gene expression for haplotype 2 in log2 scale
-#result[3] : total expression in log2 scale
-result<-gene_expression_estimation(as.numeric(genotype_h1),as.numeric(genotype_h2),AFC_vector) 
-
-print(result)
-}
-```
+    #get the expression output vector for two haplotypes
+    # the function definition is available in R folder
+    #output[1] : log expression for haplotype 1 in log2 scale
+    #output[2] : gene expression for haplotype 2 in log2 scale
+    #output[3] : total expression in log2 scale
+    result<-gene_expression_estimation(as.numeric(genotype_h1),as.numeric(genotype_h2),AFC_vector)
+    
+    return(result)
+    }
+    ```
 
 # R resources
 
