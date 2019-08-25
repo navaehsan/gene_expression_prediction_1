@@ -69,7 +69,7 @@ expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,indivi
     AFC_dt=read.table(AFC_file, header=TRUE, sep="\t")
 
     #read vcf file 
-    genotype_info= read.table(vcf_file, header=TRUE, sep = " ")
+    genotype_info= read.table(vcf_file, header=TRUE, sep = "\t")
    
 
     # get the afc vector for a specific gene 
