@@ -29,7 +29,7 @@ allele listed in ALT. For diploid calls examples could be 0/1, 1|0.
 
 **The REF and ALT information should match the REF and ALT information in aFC_Whole_Blood.txt**
 
-In order to extract the subset of the vcf file you can use the following command which IDs.txt repesents the required variants a sample of this file is in data folder.
+If a tabix index is generated for the vcf file, in order to extract the subset of the vcf file you can use the following command in which "IDs.txt" repesents the required variants. A sample of this file is available in the data folder.
 
 ```Shell
 for line in $(cat ~/data/IDs.txt)
