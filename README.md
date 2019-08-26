@@ -1,11 +1,11 @@
 # Prediction of gene expression
 This script is designed to predict allele-specific expressian and total gene expression using allelic fold change (AFC). See the [manuscript](https://genome.cshlp.org/content/27/11/1872.short) for method description.
 
-More information on estimating AFCs, could be found [here](https://github.com/wickdChromosome/leastSQ_aFC). 
+More information on estimating aFCs, could be found [here](https://github.com/wickdChromosome/leastSQ_aFC). 
 
 ## Inputs
 
-### AFC file
+### aFC file
 In the data folder there is a file named aFC_Whole_Blood.txt. This is a tab delimited file providing allelic fold change for each eQTL. In this file for each variant in columnn "variant_id" we have the following information:
 
 - gene_id : gene associated to that variant
@@ -24,7 +24,7 @@ In the data folder there is a file named aFC_Whole_Blood.txt. This is a tab deli
 
 ### VCF file
 
-A phased vcf file is required to extract the genotypes of individuals. A sample VCF file named "vcf_smaple.txt" could be found in the data folder. 
+A phased vcf file is required to extract the genotypes of individuals. A sample VCF file named "vcf_sample.txt" could be found in the data folder. 
 
 Genotype, encoded as allele values separated by either of / or |. " /" means genotype unphased and "|" means genotype phased. The allele values are 0 for the reference allele (what is in the REF  field), 1 for the allele listed in ALT. For diploid calls examples could be 0/1, 1|0.
 
@@ -41,7 +41,7 @@ for line in $(cat ~/data/IDs.txt)
     echo ${id}
     echo ${chr}
     echo ${pos}
-    tabix vcf_file ${chr}:${pos}-${pos} | grep -w $id >> vcf_file_subset.txt
+    tabix vcf_file ${chr}:${pos}-${pos} | grep -w $id >> vcf_sample.txt
     done
 
 
@@ -50,10 +50,10 @@ for line in $(cat ~/data/IDs.txt)
 Here is an example to predict the expression of a specific gene for an individual using these inputs
 
 ```R
-# AFC file
-AFC_file = "data/aFC_Whole_Blood.txt"
+# aFC file
+aFC_file = "data/aFC_Whole_Blood.txt"
 
-#VCF file
+#VCF sample file
 VCF_file = "data/sample_vcf.txt"
 
 
@@ -65,22 +65,22 @@ individual_id = "individual_id"
 
 #########################
 
-expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,individual_id){
-    # read AFC file
-    AFC_df=read.table(AFC_file, header=TRUE, sep="\t")
+expression_prediction_gene_individual<-function(aFC_file,vcf_file,gene_id,individual_id){
+    # read aFC file
+    aFC_df=read.table(aFC_file, header=TRUE, sep="\t")
 
-    #read vcf file 
-    genotype_info= read.table(VCF_file, header=TRUE, sep = "\t")
+    #read VCF file 
+    genotype_info= read.table(vcf_file, header=TRUE, sep = "\t")
    
 
     # get the afc vector for a specific gene 
     # the function definition is available in R folder
-    AFC_vector<-AFC_gene_vector(gene_id,AFC_df)
+    aFC_vector<-aFC_gene_vector(gene_id,aFC_df)
    
 
     # get the afc vector for a specific gene 
     # the function definition is available in R folder
-    variant_vector<-variant_gene_vector(gene_id,AFC_df)
+    variant_vector<-variant_gene_vector(gene_id,aFC_df)
 
 
     #null genotypes
@@ -103,7 +103,7 @@ expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,indivi
     #output[1] : log expression for haplotype 1 in log2 scale
     #output[2] : gene expression for haplotype 2 in log2 scale
     #output[3] : total expression in log2 scale
-    result<-gene_expression_estimation(as.numeric(genotype_h1),as.numeric(genotype_h2),AFC_vector)
+    result<-gene_expression_estimation(as.numeric(genotype_h1),as.numeric(genotype_h2),aFC_vector)
     
     return(result)
     }
@@ -113,12 +113,12 @@ expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,indivi
 
 ## R/gene_expression_estimation_functions.ipynb
 
-This notebook provides functions in R used in the above example that will read the AFC file and predict the gene expression.
+This notebook provides functions in R used in the above example that will read the aFC file and predict the gene expression.
 
 
 ## R/gene_expression_lookupTable.R
 
-This R script gets a sorted AFC file (**sorted based on gene_id**), counts the number of variants for each gene and produces lookup tables representing expression values for all genotypes. To run the script use the following command:
+This R script gets a sorted aFC file (**sorted based on gene_id**), counts the number of variants for each gene and produces lookup tables representing expression values for all genotypes. To run the script use the following command:
 
 ```Shell
     Rscript gene_expression_lookupTable.R data\aFC_Whole_Blood.txt
