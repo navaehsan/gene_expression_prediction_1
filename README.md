@@ -124,7 +124,7 @@ This R script gets a sorted AFC file (**sorted based on gene_id**), counts the n
 ```Shell
     Rscript gene_expression_lookupTable.R data\aFC_Whole_Blood.txt
 ```    
-## python/ASE_prediction
+## python/ASE_prediction.ipynb
 This script uses the lookuptables to predict expression for each haplotype, reading the individual genotypes from vcf file.
 
 
