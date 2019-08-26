@@ -1,6 +1,8 @@
 # Prediction of gene expression
 This script is designed to predict allele-specific expressian and total gene expression using allelic fold change (AFC). See the [manuscript](https://genome.cshlp.org/content/27/11/1872.short) for method description.
 
+More information on how estimating Afcs could be found [here](https://github.com/wickdChromosome/leastSQ_aFC) 
+
 ## Inputs
 
 ### AFC file
@@ -108,20 +110,24 @@ expression_prediction_gene_individual<-function(AFC_file,vcf_file,gene_id,indivi
     }
   ```
 
-# R resources
+# Resources
 
-## gene_expression_estimation_functions.ipynb
+## R/gene_expression_estimation_functions.ipynb
 
 This notebook provides functions in R used in the above example that will read the AFC file and predict the gene expression.
 
 
-## gene_expression_lookupTable.R
+## R/gene_expression_lookupTable.R
 
 This R script gets a sorted AFC file (**sorted based on gene_id**), counts the number of variants for each gene and produces expression values for all genotypes. To run the script use the following command:
 
 ```Shell
     Rscript gene_expression_lookupTable.R data\aFC_Whole_Blood.txt
 ```    
+## python/ASE_prediction
+This script uses the lookuptables to predict expression for each haplotype, reading the individual genotypes from vcf file.
+
+
 
 
 
