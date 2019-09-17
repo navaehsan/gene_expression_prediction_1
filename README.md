@@ -118,7 +118,7 @@ This notebook provides functions in R used in the above example that will read t
 
 ## R/gene_expression_lookupTable.R
 
-This R script gets a sorted aFC file (**sorted based on gene_id**), counts the number of variants for each gene and produces lookup tables representing expression values for all genotypes. To run the script use the following command:
+This R script gets a sorted aFC file (**sorted based on gene_id**), counts the number of variants for each gene and produces lookup tables representing expression values for all genotypes. The lookup tables are based on the number of the eQTls, thus To run the script use the following command:
 
 ```Shell
     Rscript gene_expression_lookupTable.R data\aFC_Whole_Blood.txt
